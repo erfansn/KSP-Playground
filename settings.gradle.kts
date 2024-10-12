@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "KSP Playground"
 include(":app")
- 
+include(":processor")
