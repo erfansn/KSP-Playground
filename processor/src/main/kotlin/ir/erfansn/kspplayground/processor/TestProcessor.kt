@@ -1,6 +1,5 @@
 package ir.erfansn.kspplayground.processor
 
-import com.google.devtools.ksp.containingFile
 import com.google.devtools.ksp.processing.CodeGenerator
 import com.google.devtools.ksp.processing.Dependencies
 import com.google.devtools.ksp.processing.KSPLogger
@@ -12,8 +11,8 @@ import com.google.devtools.ksp.symbol.KSAnnotated
 import com.google.devtools.ksp.symbol.KSFunctionDeclaration
 import com.google.devtools.ksp.symbol.KSNode
 import com.google.devtools.ksp.symbol.KSValueArgument
-import com.google.devtools.ksp.symbol.KSVisitorVoid
 import com.google.devtools.ksp.visitor.KSDefaultVisitor
+import ir.erfansn.kspplayground.Test
 
 class TestProcessorProvider : SymbolProcessorProvider {
   override fun create(environment: SymbolProcessorEnvironment): SymbolProcessor {
@@ -21,12 +20,12 @@ class TestProcessorProvider : SymbolProcessorProvider {
   }
 }
 
-class TestProcessor(
+private class TestProcessor(
   val codeGenerator: CodeGenerator,
   val kspLogger: KSPLogger,
 ) : SymbolProcessor {
   override fun process(resolver: Resolver): List<KSAnnotated> {
-    val symbols = resolver.getSymbolsWithAnnotation("ir.erfansn.kspplayground.Test")
+    val symbols = resolver.getSymbolsWithAnnotation(Test::class.qualifiedName.toString())
     symbols.forEach {
       it.accept(TestVisitor(), it.annotations.first().arguments.first())
     }
