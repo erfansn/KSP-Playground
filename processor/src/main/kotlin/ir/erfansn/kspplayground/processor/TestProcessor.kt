@@ -35,9 +35,10 @@ class TestProcessor(
 
   private inner class TestVisitor : KSDefaultVisitor<KSValueArgument, Unit>() {
     override fun visitFunctionDeclaration(function: KSFunctionDeclaration, data: KSValueArgument) {
-      val file = codeGenerator.createNewFile(Dependencies.ALL_FILES, "ir.erfansn.kspplayground.generated", "GeneratedTest")
+      val fileName = "Generated${function.simpleName.asString()}"
+      val file = codeGenerator.createNewFile(Dependencies.ALL_FILES, "ir.erfansn.kspplayground.generated", fileName)
       file.writer().use {
-        it.appendLine("val GeneratedTest = \"${data.value}\"")
+        it.appendLine("val Generated${function.simpleName.asString()} = \"${data.value}\"")
       }
       kspLogger.info("Function", function)
     }

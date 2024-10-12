@@ -1,6 +1,7 @@
 package ir.erfansn.kspplayground
 
-import GeneratedTest
+import GeneratedGreeting
+import GeneratedGreetingPreview
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -31,19 +32,20 @@ class MainActivity : ComponentActivity() {
   }
 }
 
-@Test("TestMessage")
+@Test("Normal")
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
   Text(
-    text = "Hello $GeneratedTest $name!",
+    text = "Hello $GeneratedGreeting $name!",
     modifier = modifier
   )
 }
 
+@Test("Preview")
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
   KSPPlaygroundTheme {
-    Greeting("Android")
+    Greeting("Android $GeneratedGreetingPreview")
   }
 }
