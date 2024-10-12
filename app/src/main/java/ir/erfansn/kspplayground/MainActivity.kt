@@ -1,5 +1,6 @@
 package ir.erfansn.kspplayground
 
+import GeneratedTest
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -30,10 +31,11 @@ class MainActivity : ComponentActivity() {
   }
 }
 
+@Test("TestMessage")
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
   Text(
-    text = "Hello $name!",
+    text = "Hello $GeneratedTest $name!",
     modifier = modifier
   )
 }
