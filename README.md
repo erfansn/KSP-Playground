@@ -3,3 +3,4 @@ In this repository, I demonstrate how to bypass the limitation of not being able
 
 ## References
 - https://kotlinlang.org/docs/ksp-quickstart.html
+- https://github.com/InsertKoinIO/koin-annotations/tree/main/projects/koin-ksp-compiler/src/jvmMain/kotlin/org/koin/compiler
