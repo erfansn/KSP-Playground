@@ -62,7 +62,11 @@ private class TestProcessor(
         fileName
       )
       file.writer().use {
-        it.appendLine("val Generated${function.simpleName.asString()} = \"${data.value}\"")
+        it.appendLine("""
+          package ir.erfansn.kspplayground.generated
+          
+          val Generated${function.simpleName.asString()} = "${data.value}"
+        """.trimIndent())
       }
     }
 

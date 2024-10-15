@@ -1,7 +1,5 @@
 package ir.erfansn.kspplayground
 
-import GeneratedGreeting
-import GeneratedGreetingPreview
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -14,6 +12,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import ir.erfansn.kspplayground.annotation.KspTest
+import ir.erfansn.kspplayground.generated.GeneratedGreeting
+import ir.erfansn.kspplayground.generated.GeneratedGreetingPreview
+import ir.erfansn.kspplayground.generated.GeneratedTestAnotherModule
 import ir.erfansn.kspplayground.ui.theme.KSPPlaygroundTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,7 +25,7 @@ class MainActivity : ComponentActivity() {
       KSPPlaygroundTheme {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
           Greeting(
-            name = "Android",
+            name = "Android $GeneratedTestAnotherModule",
             modifier = Modifier.padding(innerPadding)
           )
         }
