@@ -22,3 +22,6 @@ dependencyResolutionManagement {
 rootProject.name = "KSP Playground"
 include(":app")
 include(":processor")
+include(":module")
+include(":module_processor")
+include(":annotation")

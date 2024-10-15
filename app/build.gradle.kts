@@ -57,6 +57,7 @@ dependencies {
   debugImplementation(libs.androidx.ui.tooling)
   debugImplementation(libs.androidx.ui.test.manifest)
 
-  implementation(project(":processor"))
+  implementation(project(":annotation"))
+  implementation(project(":module"))
   ksp(project(":processor"))
 }

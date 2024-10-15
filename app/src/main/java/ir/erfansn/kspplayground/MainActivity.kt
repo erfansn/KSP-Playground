@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import ir.erfansn.kspplayground.annotation.KspTest
 import ir.erfansn.kspplayground.ui.theme.KSPPlaygroundTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,7 +33,7 @@ class MainActivity : ComponentActivity() {
   }
 }
 
-@Test("Normal")
+@KspTest("Normal")
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
   Text(
@@ -41,7 +42,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
   )
 }
 
-@Test("Preview")
+@KspTest("Preview")
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
